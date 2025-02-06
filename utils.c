@@ -29,5 +29,4 @@ void Signal(int sig, void *handler, bool use_siginfo)
         perror("Sigaction failed");
         exit(EXIT_FAILURE);
     }
-
 }
