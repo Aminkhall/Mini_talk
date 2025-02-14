@@ -7,8 +7,10 @@ HEADER 	=	mini_talk.h
 CFLAGS 	= 	-Wall -Wextra -Werror
 
 Client 	=	client.c \
+			utils.c \
 
 Server	=	server.c \
+			utils.c \
 
 OClient 	= 	${Client:.c=.o}
 OServer	=	${Server:.c=.o}
