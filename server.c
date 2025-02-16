@@ -22,6 +22,8 @@ void handler(int sig, siginfo_t *siginfo, void *more_info)
 		i = 7;
 		c = 0;
 	}
+	usleep(500);
+	kill(siginfo->si_pid, SIGUSR1);
 }
 
 int main(void)
