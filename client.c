@@ -22,7 +22,7 @@ void send_char(char c, pid_t server)
     int err;
 
     err = 0;
-    bit = 4 + 4;
+    bit = 8;
     signal(SIGUSR1, check_sig);
     while (bit)
     {
@@ -38,11 +38,11 @@ void send_char(char c, pid_t server)
     }
 }
 
-void ft_exit(int c)
-{
-    if (c == SIGINT)
-        exit(1);
-}
+// void ft_exit(int c)
+// {
+//     if (c == SIGINT)
+//         exit(1);
+// }
 
 int is_valid(int c)
 {
@@ -72,7 +72,7 @@ int main(int ac, char **av)
     pid_t server;
     char *message;
 
-    signal(SIGINT, ft_exit);
+    // signal(SIGINT, ft_exit);
     if (ac != 3)
         ft_error(1);
     if (atoi(av[1]) < 0 || ft_isdigit(*(av + 1)) || atoi(av[1]) > 4194304)
