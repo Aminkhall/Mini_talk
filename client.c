@@ -13,6 +13,8 @@ void check_sig(int sig)
 {
     if (sig == SIGUSR1)
         return ;
+    if (sig == SIGUSR2)
+        ft_putstr_fd("Message received\n", 1);
 }
 
 void send_char(char c, pid_t server)
@@ -73,6 +75,7 @@ int main(int ac, char **av)
     char *message;
 
     // signal(SIGINT, ft_exit);
+    signal(SIGUSR2, check_sig);
     if (ac != 3)
         ft_error(1);
     if (atoi(av[1]) < 0 || ft_isdigit(*(av + 1)) || atoi(av[1]) > 4194304)
