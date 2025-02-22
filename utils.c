@@ -29,3 +29,29 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(num / 10, fd);
 	ft_putchar_fd((num % 10) + '0', fd);
 }
+
+long	ft_atoi(const char *str)
+{
+	int		sign;
+	long	num;
+
+	sign = 1;
+	num = 0;
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	if (*str == '-')
+	{
+		sign = -sign;
+		str++;
+	}
+	else if (*str == '+')
+		str++;
+	while (isdigit(*str))
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+		if (4194304 < num)
+			return (-1);
+	}
+	return (num * sign);
+}

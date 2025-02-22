@@ -68,7 +68,6 @@ int ft_isdigit(char *s)
         return (1);
     return (0);
 }
-
 int main(int ac, char **av)
 {
     pid_t server;
@@ -78,9 +77,9 @@ int main(int ac, char **av)
     signal(SIGUSR2, check_sig);
     if (ac != 3)
         ft_error(1);
-    if (atoi(av[1]) < 0 || ft_isdigit(*(av + 1)) || atoi(av[1]) > 4194304)
+    if (ft_atoi(av[1]) < 0 || ft_isdigit(*(av + 1)))
         ft_error(2);
-    server = atoi(av[1]);
+    server = ft_atoi(av[1]);
     message = av[2];
     while (*message)
         send_char(*message++, server);
