@@ -11,6 +11,7 @@ Client 	=	client.c \
 
 Server	=	server.c \
 			utils.c \
+			utils2.c \
 
 OClient 	= 	${Client:.c=.o}
 OServer	=	${Server:.c=.o}

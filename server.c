@@ -5,6 +5,7 @@ void handler(int sig, siginfo_t *siginfo, void *more_info)
     static int		i;
 	static char		c;
 	static pid_t	pid;
+	static char		*tab;
 
 	(void)more_info;
 	if (siginfo->si_pid != pid)
@@ -18,9 +19,14 @@ void handler(int sig, siginfo_t *siginfo, void *more_info)
 	i--;
 	if (i == -1)
 	{
-		write(1, &c, 1);
+		tab = ft_strjoin(tab, &c);
 		if (c == '\0')
+		{
+			ft_putstr_fd(tab, 1);
+			free(tab);
+			tab = NULL;
 			kill(siginfo->si_pid, SIGUSR2);
+		}
 		i = 7;
 		c = 0;
 	}
