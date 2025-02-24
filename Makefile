@@ -8,6 +8,7 @@ CFLAGS 	= 	-Wall -Wextra -Werror
 
 Client 	=	client.c \
 			utils.c \
+			utils3.c \
 
 Server	=	server.c \
 			utils.c \

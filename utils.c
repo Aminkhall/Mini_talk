@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkhallou <mkhallou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/24 17:08:31 by mkhallou          #+#    #+#             */
+/*   Updated: 2025/02/24 17:19:18 by mkhallou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mini_talk.h"
 
 void	ft_putchar_fd(char c, int fd)
@@ -30,6 +42,13 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd((num % 10) + '0', fd);
 }
 
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
 long	ft_atoi(const char *str)
 {
 	int		sign;
@@ -46,7 +65,7 @@ long	ft_atoi(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	while (isdigit(*str))
+	while (ft_isdigit(*str))
 	{
 		num = num * 10 + (*str - '0');
 		str++;

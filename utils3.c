@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_talk.h                                        :+:      :+:    :+:   */
+/*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkhallou <mkhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 17:08:20 by mkhallou          #+#    #+#             */
-/*   Updated: 2025/02/24 17:23:56 by mkhallou         ###   ########.fr       */
+/*   Created: 2025/02/24 17:20:35 by mkhallou          #+#    #+#             */
+/*   Updated: 2025/02/24 17:20:54 by mkhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_TALK_H
-# define MINI_TALK_H
+#include "mini_talk.h"
 
-# include <unistd.h>
-# include <signal.h>
-# include <stdlib.h>
+int	is_valid(int c)
+{
+	return ((c >= '0' && c <= '9') || c == '+');
+}
 
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putchar_fd(char c, int fd);
-long	ft_atoi(const char *str);
-char	*ft_strjoin(char *s1, char *s2);
-int		ft_isdigit2(char *s);
+int	ft_isdigit2(char *s)
+{
+	int	count;
 
-#endif 
+	count = 0;
+	while (*s)
+	{
+		if (*s == '+')
+			count++;
+		if (!is_valid(*s))
+			return (1);
+		s++;
+	}
+	if (count > 1)
+		return (1);
+	return (0);
+}

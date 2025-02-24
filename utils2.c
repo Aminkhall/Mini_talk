@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkhallou <mkhallou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/24 17:08:33 by mkhallou          #+#    #+#             */
+/*   Updated: 2025/02/24 17:19:54 by mkhallou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mini_talk.h"
 
 size_t	ft_strlen(const char *s)
@@ -73,5 +85,5 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	ft_strlcpy(new_str, s1, (ft_strlen(s1) + 1));
 	ft_strlcat(new_str, s2, total_len + 1);
-	return (free(s1), new_str);
+	return (free(s1), s1 = NULL, new_str);
 }
