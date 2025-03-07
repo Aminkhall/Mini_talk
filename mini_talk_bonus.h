@@ -6,12 +6,12 @@
 /*   By: mkhallou <mkhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:08:20 by mkhallou          #+#    #+#             */
-/*   Updated: 2025/03/07 14:40:19 by mkhallou         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:29:21 by mkhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_TALK_H
-# define MINI_TALK_H
+#ifndef MINI_TALK_BONUS_H
+# define MINI_TALK_BONUS_H
 
 # include <unistd.h>
 # include <signal.h>
