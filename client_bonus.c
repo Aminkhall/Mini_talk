@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkhallou <mkhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:08:24 by mkhallou          #+#    #+#             */
-/*   Updated: 2025/03/07 14:37:29 by mkhallou         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:40:32 by mkhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	check_sig(int sig)
 {
 	if (sig == SIGUSR1)
 		return ;
+	if (sig == SIGUSR2)
+		ft_putstr_fd("Message received\n", 1);
 }
 
 void	send_char(char c, pid_t server)
@@ -55,6 +57,7 @@ int	main(int ac, char **av)
 	pid_t	server;
 	char	*message;
 
+	signal(SIGUSR2, check_sig);
 	if (ac != 3)
 		ft_error(1);
 	if (ft_atoi(av[1]) < 0 || ft_isdigit2(*(av + 1)) || !(*av[1]))
