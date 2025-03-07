@@ -6,11 +6,11 @@
 /*   By: mkhallou <mkhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:08:28 by mkhallou          #+#    #+#             */
-/*   Updated: 2025/03/07 14:28:45 by mkhallou         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:06:32 by mkhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mini_talk.h"
+#include "mini_talk_bonus.h"
 
 void	free_tab(char **tab)
 {
